@@ -116,7 +116,7 @@ let interrupt_hook () =
 let connect () =
   let t    = { handlers = [] ; inits = [ bootstrap ] }
   and hook = interrupt_hook () in
-  OS.Main.at_enter_iter (fun () ->
+  Mirage_scheduler.at_enter_iter (fun () ->
     match t.handlers with
     | [] -> ()
     | xs -> let e = hook () in List.iter (fun h -> h ~source:0 e) xs) ;
@@ -133,4 +133,3 @@ let remove_handler t token =
 let disconnect t =
   t.handlers <- [] ;
   Lwt.return_unit
-
