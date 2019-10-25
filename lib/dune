@@ -2,7 +2,6 @@
   (name        mirage_entropy)
   (public_name mirage-entropy)
   (libraries   lwt cstruct mirage-scheduler)
-  (wrapped false)
   (c_names     entropy_cpu_stubs)
   (c_flags     :standard (:include cflags.sexp) -std=c99 -Wall -Wpedantic)
 
