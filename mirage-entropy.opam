@@ -15,7 +15,7 @@ build: [
 depends: [
   "dune"
   "ocaml" {>= "4.04.2"}
-  "mirage-os-shim"
+  "mirage-runtime"
   "cstruct"
   "lwt"
 ]
